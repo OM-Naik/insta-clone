@@ -1,0 +1,46 @@
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    height: fit-content;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        input,
+        button {
+            padding-inline: 1.5rem;
+            padding-block: 1rem;
+            border: none;
+            outline: none;
+            border-radius: 1rem;
+        }
+
+        button {
+            background-color: #d02828;
+            color: #282828;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f02828;
+        }
+    }
+}
+
+.toggleAuthForm {
+    color: #d02828;
+    cursor: pointer;
+    text-decoration: underline;
+}
