@@ -16,10 +16,7 @@ async function identifyUser(req, res, next) {
         return res.status(401).json({ message: "user not authorized" });
     }
 
-    req.user = {
-        email: decoded.email,
-        username: decoded.username
-    };
+    req.user = decoded;
 
     next();
 }
