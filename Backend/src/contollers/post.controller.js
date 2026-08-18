@@ -83,9 +83,44 @@ async function likePostController(req, res) {
 
 }
 
+async function getFeedPostsController(req, res) {
+
+    const user = req.user;
+
+
+    // Fetch all posts from the database and populate the user field with user details but also hide the password field from the user details.
+    const posts = await postModel.find()
+        .populate({
+            path: "user",
+            select: "-password"
+        }).lean();
+
+    // Now posts is a JavaScript array, so .map() works
+    const updatedPosts = await Promise.all(
+        posts.map(async (post) => {
+
+            const likes = await likeModel.find({
+                user: user.username,
+                post: post._id
+            });
+
+            const isLiked = likes.length > 0;
+
+            post.isLiked = Boolean(isLiked);
+
+            return post;
+        })
+    );
+
+    res.status(200).json({
+        message: "Feed posts fetched successfully",
+        posts: updatedPosts
+    });
+}
 module.exports = {
     createPostController,
     getPostsController,
     getPostDetailsController,
     likePostController,
+    getFeedPostsController,
 }

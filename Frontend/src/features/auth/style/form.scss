@@ -17,30 +17,18 @@ main {
         flex-direction: column;
         gap: 1rem;
 
-        input,
-        button {
+        input {
             padding-inline: 1.5rem;
             padding-block: 1rem;
             border: none;
             outline: none;
             border-radius: 1rem;
         }
-
-        button {
-            background-color: #d02828;
-            color: #282828;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #f02828;
-        }
     }
 }
 
 .toggleAuthForm {
-    color: #d02828;
+    color: #d20c3d;;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
 }

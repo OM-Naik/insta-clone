@@ -1,14 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import Login from "./features/auth/pages/Login";
 import Register from "./features/auth/pages/Register";
+import Feed from "./features/posts/pages/feed";
 
 function AppRoutes() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<h1>Welcome to the App</h1>} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/" element={<Feed />} />
             </Routes>
         </BrowserRouter>
     );
