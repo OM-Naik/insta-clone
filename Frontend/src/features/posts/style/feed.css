@@ -7,19 +7,20 @@
 .feed-page .feed {
   max-width: 300px;
   width: 100%;
+  margin-top: 1.5rem;
 }
 .feed-page .feed .posts {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 2rem;
 }
 .feed-page .feed .post {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background-color: #312626;
+  background-color: rgba(130, 130, 130, 0.2196078431);
   padding-inline: 0.5rem;
   padding-block: 0.5rem;
 }
@@ -41,6 +42,9 @@
   aspect-ratio: 1/1;
   border-radius: 50%;
 }
+.feed-page .feed .post img {
+  width: 100%;
+}
 .feed-page .feed .post .icons {
   display: flex;
   justify-content: space-between;
@@ -61,7 +65,4 @@
   background-color: transparent;
   border: none;
   outline: none;
-}
-.feed-page .feed .post img {
-  width: 100%;
 }/*# sourceMappingURL=feed.css.map */
